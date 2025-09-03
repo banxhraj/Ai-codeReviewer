@@ -1,0 +1,26 @@
+import React from 'react'
+import { Routes ,Route} from 'react-router-dom'
+import HomePage from './pages/HomePage.jsx'
+import Login from './pages/Login.jsx'
+import Verify from './pages/Verify.jsx'
+import Resetpassword from './pages/Resetpassword.jsx'
+import Chat from './pages/Chat.jsx'
+ import { ToastContainer } from 'react-toastify';
+ import 'react-toastify/dist/ReactToastify.css';
+
+const App = () => {
+  return (
+    <div>
+        <ToastContainer />
+        <Routes>
+            <Route path='/' element={<HomePage/>}/>
+            <Route path='/login' element={<Login/>}/>
+            <Route path='/chat' element={<Chat/>}/>
+            <Route path='/email-verify' element={<Verify/>}/>
+            <Route path='/reset-password' element={<Resetpassword/>}/>
+        </Routes>
+    </div>
+  )
+}
+
+export default App
