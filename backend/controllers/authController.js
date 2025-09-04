@@ -45,7 +45,8 @@ export const register = async (req, res) => {
 
     return res.json({ success: true });
   } catch (error) {
-    res.json({ success: "false", message: error.message });
+  console.log('Error in authController:', error);
+  res.json({ success: "false", message: error.message });
   }
 }; //register function ends here
 
@@ -85,7 +86,8 @@ export const login = async (req, res) => {
 
     return res.json({ success: true });
   } catch (error) {
-    return res.json({ success: false, message: error.message });
+  console.log('Error in authController:', error);
+  return res.json({ success: false, message: error.message });
   }
 }; //login function ends here
 
@@ -98,7 +100,8 @@ export const logout = async (req, res) => {
     });
     return res.json({ success: true, message: "Logged out successfully" });
   } catch (error) {
-    return res.json({ success: false, message: error.message });
+  console.log('Error in authController:', error);
+  return res.json({ success: false, message: error.message });
   }
 };
 
@@ -127,7 +130,8 @@ export const sendVerifyOtp = async (req, res) => {
 
     res.json({ success: true, message: "verification otp sent on Email " });
   } catch (error) {
-    res.json({ success: false, messege: error.messege });
+  console.log('Error in authController:', error);
+  res.json({ success: false, messege: error.messege });
   }
 };
 //verify the user using otp
@@ -159,7 +163,8 @@ export const verifyEmail = async (req, res) => {
     await user.save();
     return res.json({ success: true, message: "Email verified successfully" });
   } catch (error) {
-    return res.json({ success: false, message: error.messege });
+  console.log('Error in authController:', error);
+  return res.json({ success: false, message: error.messege });
   }
 };
 
@@ -168,7 +173,8 @@ export const isAuthenticated = async (req, res) => {
   try {
     return res.json({ success: true });
   } catch (error) {
-    return res.json({ success: false, message: error.messege });
+  console.log('Error in authController:', error);
+  return res.json({ success: false, message: error.messege });
   }
 };
 

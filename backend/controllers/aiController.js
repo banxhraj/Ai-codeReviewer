@@ -18,7 +18,8 @@ export const getReview = async (req, res) => {
 
     return res.json({ success: true, review });
   } catch (error) {
-    return res.status(500).json({ success: false, message: error.message });
+  console.log('Error in aiController:', error);
+  return res.status(500).json({ success: false, message: error.message });
   }
 };
 
@@ -32,7 +33,8 @@ export const getLatestChats = async (req, res) => {
 
     return res.json({ success: true, chats });
   } catch (error) {
-    return res.status(500).json({ success: false, message: error.message });
+  console.log('Error in aiController:', error);
+  return res.status(500).json({ success: false, message: error.message });
   }
 };
 
