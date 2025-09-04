@@ -1,5 +1,6 @@
 import express from 'express';
 import cors from 'cors';
+import { corsOptions } from '../middleware/corsOptions.js';
 import 'dotenv/config';
 import cookieParser from 'cookie-parser';
 import connectDB from './db/db.js';
@@ -14,17 +15,8 @@ const PORT = process.env.PORT || 4000;
 connectDB();
  
 
-const allowedOrigins = [
-  'httpAccess-Control-Allow-Origin: https://ai-code-reviewer-1cys.vercel.app',
-  'httpAccess-Control-Allow-Origin: *',
-  'http://localhost:5173',
-  'http://localhost:5174',
-  'http://127.0.0.1:5173',
-  'http://127.0.0.1:5174'
-];
-
 app.use(express.json());
-app.use(cors({origin: allowedOrigins, credentials: true}));
+app.use(cors(corsOptions));
 app.use(cookieParser());
 
 //Api endpoints
