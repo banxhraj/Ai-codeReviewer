@@ -15,7 +15,8 @@ connectDB();
  
 
 const allowedOrigins = [
-  'https://ai-code-reviewer-seven-bay.vercel.app/',
+  'httpAccess-Control-Allow-Origin: https://ai-code-reviewer-1cys.vercel.app',
+  'httpAccess-Control-Allow-Origin: *',
   'http://localhost:5173',
   'http://localhost:5174',
   'http://127.0.0.1:5173',
