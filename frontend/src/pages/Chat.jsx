@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react'
 import Markdown from "react-markdown"
 import axios from 'axios'
+import Navbar from '../components/Navbar'
 
 const Chat = () => {
+  
   const [ code, setCode ] = useState(`function sum() {
   return 1 + 1
 }`)
@@ -51,6 +53,7 @@ const Chat = () => {
 
   return (
     <div style={{ padding: '20px', height: '100vh', display: 'flex', gap: '20px' }}>
+      <Navbar />
       {/* Left side - Code input */}
       <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '10px' }}>
         <h2 style={{ margin: 0, color: '#333' }}>Enter Your code</h2>

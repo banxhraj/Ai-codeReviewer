@@ -9,7 +9,7 @@ const userAuth= async(req ,res, next)=>{
         
     }
 
-    try {
+    try { 
         
        const tokenDecode = jwt.verify(token, process.env.JWT_SECRET)
 
